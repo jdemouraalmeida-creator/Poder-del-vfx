@@ -17,6 +17,13 @@ export default function Hero() {
 
       <div className="relative z-10 w-full max-w-4xl mx-auto px-8 py-24 text-center">
 
+        <img
+          src="/Image/LOGO.png"
+          alt="El Poder del VFX"
+          className="mx-auto mb-10"
+          style={{ maxHeight: '180px', objectFit: 'contain', filter: 'invert(1) brightness(1.1)' }}
+        />
+
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-500/30 bg-black/50 text-brand-400 text-xs font-sans backdrop-blur mb-8">
           <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse shrink-0" />
           GUÍA DE CARRERA · MERCADO AUDIOVISUAL
