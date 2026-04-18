@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --red: #E63022;
+  --red-light: #FF6B5B;
+  --bg: #0A0A0A;
+  --bg-section: #111111;
+  --bg-card: #141414;
+}
+
+* { box-sizing: border-box; padding: 0; margin: 0; }
+
+.font-display { font-weight: 800; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #000000;
+  color: #e8e8e8;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0A0A0A; }
+::-webkit-scrollbar-thumb { background: var(--red); border-radius: 3px; }
+
+/* Section divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(230,48,34,0.4), transparent);
+}
+
+/* Glow utilities */
+.text-glow {
+  text-shadow: 0 0 20px rgba(230,48,34,0.8), 0 0 40px rgba(230,48,34,0.4);
+}
+.text-glow-sm {
+  text-shadow: 0 0 12px rgba(230,48,34,0.6);
+}
+.box-glow {
+  box-shadow: 0 0 30px rgba(230,48,34,0.35), 0 0 60px rgba(230,48,34,0.12);
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(230,48,34,0.18);
+  border-color: rgba(230,48,34,0.45) !important;
+}
+
+/* Button shine */
+@keyframes btnShine {
+  0% { left: -100%; }
+  50%, 100% { left: 150%; }
+}
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transform: skewX(-20deg);
+  animation: btnShine 3s ease-in-out infinite;
+}
+
+/* Marquee */
+@keyframes marquee-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.marquee-left {
+  animation: marquee-left 55s linear infinite;
+  will-change: transform;
+}
+.marquee-right {
+  animation: marquee-right 65s linear infinite;
+  will-change: transform;
+}
+.marquee-track:hover .marquee-left,
+.marquee-track:hover .marquee-right {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-left, .marquee-right { animation: none; }
+}

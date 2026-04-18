@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Poder del VFX — La guía para triunfar en el audiovisual</title>
+  <meta name="description" content="Aprende After Effects y Blender desde cero y domina los efectos visuales para publicidad, redes sociales y marketing digital. Curso práctico en español." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #E63022;
+      --red-light: #FF6B5B;
+      --black: #0A0A0A;
+      --black-2: #111111;
+      --black-3: #1A1A1A;
+      --white: #FFFFFF;
+      --gray: #999999;
+      --gray-light: #CCCCCC;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3 { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.03em; line-height: 1.1; }
+    .label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 5rem 0; }
+
+    /* ── BUTTON ── */
+    .btn {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.25rem;
+      letter-spacing: 0.08em;
+      padding: 1rem 2.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:hover { background: var(--red-light); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--red);
+      color: var(--red);
+    }
+    .btn-outline:hover { background: var(--red); color: var(--white); }
+
+    /* ── DIVIDER ── */
+    .divider { width: 60px; height: 3px; background: var(--red); margin: 1.5rem 0; }
+
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 6rem 0 4rem;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 60% 50%, rgba(230,48,34,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(230,48,34,0.12);
+      border: 1px solid rgba(230,48,34,0.3);
+      border-radius: 2rem;
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red-light);
+      margin-bottom: 1.5rem;
+    }
+    .hero-tag span { width: 6px; height: 6px; background: var(--red); border-radius: 50%; display: inline-block; }
+    .hero-title { font-size: clamp(3.5rem, 7vw, 6rem); color: var(--white); margin-bottom: 0.5rem; }
+    .hero-title em { color: var(--red); font-style: normal; }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--gray-light);
+      max-width: 480px;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    .hero-cta { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .hero-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      color: var(--gray);
+    }
+    .hero-price strong { color: var(--white); font-size: 2rem; }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-card {
+      background: var(--black-3);
+      border: 1px solid rgba(230,48,34,0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 420px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--red), transparent);
+    }
+    .hero-card-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: var(--white);
+    }
+    .hero-includes { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .hero-includes li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--gray-light);
+    }
+    .hero-includes li .icon {
+      color: var(--red);
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    /* ══════════════════════════════════════
+       FOR WHOM
+    ══════════════════════════════════════ */
+    #para-quien {
+      background: var(--black-2);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .para-quien-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .para-quien-intro h2 { font-size: clamp(2.5rem, 5vw, 4rem); }
+    .para-quien-intro p { color: var(--gray-light); margin-top: 1rem; font-size: 1rem; line-height: 1.7; }
+    .cards-list { display: flex; flex-direction: column; gap: 1rem; }
+    .card-item {
+      background: var(--black-3);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: border-color 0.2s;
+    }
+    .card-item:hover { border-color: rgba(230,48,34,0.3); }
+    .card-icon {
+      width: 40px; height: 40px;
+      background: rgba(230,48,34,0.1);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .card-item h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; font-family: 'Inter', sans-serif; }
+    .card-item p { font-size: 0.875rem; color: var(--gray); }
+
+    /* ══════════════════════════════════════
+       CURRICULUM
+    ══════════════════════════════════════ */
+    #curriculum { background: var(--black); }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-header h2 { font-size: clamp(2.5rem, 5vw, 4rem); }
+    .section-header p { color: var(--gray-light); max-width: 580px; margin: 1rem auto 0; }
+    .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .aula-card {
+      background: var(--black-3);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .aula-card:hover { border-color: rgba(230,48,34,0.4); transform: translateY(-3px); }
+    .aula-number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: rgba(230,48,34,0.15);
+      position: absolute;
+      top: 0.75rem; right: 1rem;
+      line-height: 1;
+    }
+    .aula-card h3 { font-size: 1.4rem; margin-bottom: 0.75rem; color: var(--white); }
+    .aula-card p { font-size: 0.875rem; color: var(--gray); line-height: 1.6; }
+
+    /* ══════════════════════════════════════
+       PRACTICAL PROJECTS
+    ══════════════════════════════════════ */
+    #proyectos {
+      background: var(--black-2);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .proyectos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .proyecto-card {
+      background: var(--black);
+      border: 1px solid rgba(230,48,34,0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .proyecto-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), transparent);
+    }
+    .proyecto-badge {
+      display: inline-block;
+      background: rgba(230,48,34,0.15);
+      color: var(--red-light);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 2rem;
+      margin-bottom: 1rem;
+    }
+    .proyecto-card h3 { font-size: 1.6rem; margin-bottom: 0.75rem; }
+    .proyecto-card p { color: var(--gray-light); font-size: 0.9rem; margin-bottom: 1.25rem; line-height: 1.6; }
+    .proyecto-tecnicas { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .proyecto-tecnicas li {
+      font-size: 0.85rem;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .proyecto-tecnicas li::before { content: '›'; color: var(--red); font-size: 1.1rem; }
+
+    /* ══════════════════════════════════════
+       BONUS
+    ══════════════════════════════════════ */
+    #bonus { background: var(--black); }
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+    }
+    .bonus-card {
+      background: var(--black-3);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+    .bonus-card:hover { border-color: rgba(230,48,34,0.3); }
+    .bonus-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .bonus-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .bonus-card p { font-size: 0.8rem; color: var(--gray); line-height: 1.5; }
+
+    /* ══════════════════════════════════════
+       PRICING
+    ══════════════════════════════════════ */
+    #precio {
+      background: var(--black-2);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .pricing-box {
+      max-width: 520px;
+      margin: 0 auto;
+      background: var(--black);
+      border: 1px solid rgba(230,48,34,0.3);
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--red);
+    }
+    .pricing-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+    }
+    .pricing-amount {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+    .pricing-amount sup { font-size: 2rem; vertical-align: super; }
+    .pricing-desc { color: var(--gray); font-size: 0.875rem; margin-bottom: 2rem; }
+    .pricing-list { list-style: none; margin-bottom: 2.5rem; text-align: left; display: flex; flex-direction: column; gap: 0.75rem; }
+    .pricing-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--gray-light);
+    }
+    .pricing-list li .check { color: var(--red); font-size: 1rem; flex-shrink: 0; }
+    .pricing-box .btn { width: 100%; text-align: center; font-size: 1.4rem; padding: 1.1rem; }
+    .pricing-guarantee {
+      margin-top: 1.25rem;
+      font-size: 0.8rem;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    /* ══════════════════════════════════════
+       FAQ
+    ══════════════════════════════════════ */
+    #faq { background: var(--black); }
+    .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+    .faq-item {
+      background: var(--black-3);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .faq-question:hover { color: var(--red-light); }
+    .faq-question .arrow { color: var(--red); font-size: 1.2rem; flex-shrink: 0; transition: transform 0.2s; }
+    .faq-answer {
+      padding: 0 1.5rem 1.25rem;
+      color: var(--gray-light);
+      font-size: 0.875rem;
+      line-height: 1.7;
+      display: none;
+    }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .arrow { transform: rotate(90deg); }
+
+    /* ══════════════════════════════════════
+       FOOTER CTA
+    ══════════════════════════════════════ */
+    #footer-cta {
+      background: var(--black-2);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+      padding: 5rem 0;
+    }
+    #footer-cta h2 { font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 1rem; }
+    #footer-cta p { color: var(--gray-light); max-width: 500px; margin: 0 auto 2.5rem; }
+
+    footer {
+      background: var(--black);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.8rem;
+    }
+    footer a { color: var(--gray); text-decoration: none; }
+    footer a:hover { color: var(--red-light); }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    @media (max-width: 768px) {
+      .hero-grid,
+      .para-quien-grid,
+      .proyectos-grid { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      section { padding: 3.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HERO ══ -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-tag"><span></span> Curso de Efectos Visuales</div>
+          <h1 class="hero-title">El Poder<br/>del <em>VFX</em></h1>
+          <p class="hero-subtitle">
+            Domina After Effects y Blender para crear efectos visuales profesionales para publicidad, redes sociales y marketing digital. Sin rodeos, sin promesas vacías — solo habilidades reales.
+          </p>
+          <div class="hero-cta">
+            <a href="#precio" class="btn">Quiero el curso</a>
+            <div class="hero-price">Solo <strong>12,97€</strong></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <h3 class="hero-card-title">¿Qué incluye?</h3>
+            <ul class="hero-includes">
+              <li><span class="icon">▶</span> 6 lecciones sobre el mercado audiovisual</li>
+              <li><span class="icon">▶</span> Proyecto práctico con After Effects</li>
+              <li><span class="icon">▶</span> Proyecto práctico con Blender (Realidad Aumentada)</li>
+              <li><span class="icon">▶</span> Pack HUDs Editables (hologramas)</li>
+              <li><span class="icon">▶</span> Pack Tormenta VFX (lluvia, rayos...)</li>
+              <li><span class="icon">▶</span> Pack Essentials (explosiones, fuego...)</li>
+              <li><span class="icon">▶</span> 151 efectos de sonido Sci-Fi / Cyberpunk</li>
+              <li><span class="icon">▶</span> Pack de ambientes sonoros</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PARA QUIÉN ══ -->
+  <section id="para-quien">
+    <div class="container">
+      <div class="para-quien-grid">
+        <div class="para-quien-intro">
+          <span class="label">Para quién es</span>
+          <h2>Este curso es para ti si...</h2>
+          <div class="divider"></div>
+          <p>No necesitas experiencia previa. Solo necesitas querer aprender y dedicarle tiempo.</p>
+        </div>
+        <div class="cards-list">
+          <div class="card-item">
+            <div class="card-icon">🎬</div>
+            <div>
+              <h4>Quieres trabajar con VFX</h4>
+              <p>Para publicidad, redes sociales o producción audiovisual — no necesariamente Hollywood.</p>
+            </div>
+          </div>
+          <div class="card-item">
+            <div class="card-icon">🛠️</div>
+            <div>
+              <h4>Nunca usaste After Effects ni Blender</h4>
+              <p>Empezamos desde cero. No asumimos conocimiento previo.</p>
+            </div>
+          </div>
+          <div class="card-item">
+            <div class="card-icon">📱</div>
+            <div>
+              <h4>Creas contenido digital</h4>
+              <p>Youtubers, editors, creadores de contenido que quieren llevar su trabajo al siguiente nivel.</p>
+            </div>
+          </div>
+          <div class="card-item">
+            <div class="card-icon">🎯</div>
+            <div>
+              <h4>Buscas una habilidad concreta</h4>
+              <p>Sin teoría innecesaria. Aprenderás lo que realmente se usa en el mercado actual.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CURRICULUM ══ -->
+  <section id="curriculum">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Contenido del curso</span>
+        <h2>Lo que aprenderás</h2>
+        <p>6 lecciones que te dan la visión y la mentalidad del mercado audiovisual profesional.</p>
+      </div>
+      <div class="curriculum-grid">
+        <div class="aula-card">
+          <div class="aula-number">01</div>
+          <h3>Claridad Profesional</h3>
+          <p>Entiende el mercado audiovisual y descubre en qué segmento encaja tu perfil. No todos los caminos llevan a Hollywood — y eso está bien.</p>
+        </div>
+        <div class="aula-card">
+          <div class="aula-number">02</div>
+          <h3>Oportunidades del Mercado</h3>
+          <p>Cómo es el mercado hoy: agencias, produtoras, marcas y la alta demanda de contenido digital. Una visión honesta de las posibilidades reales.</p>
+        </div>
+        <div class="aula-card">
+          <div class="aula-number">03</div>
+          <h3>Networking — Parte 1</h3>
+          <p>Plataformas y métodos reales para construir tu red de contactos. "Quien no es visto, no es recordado."</p>
+        </div>
+        <div class="aula-card">
+          <div class="aula-number">04</div>
+          <h3>Networking — Parte 2</h3>
+          <p>Casos reales y estrategias para conectar con clientes y profesionales del sector audiovisual.</p>
+        </div>
+        <div class="aula-card">
+          <div class="aula-number">05</div>
+          <h3>Nuevos Conocimientos — Parte 1</h3>
+          <p>Cómo organizarse para aprender de forma constante en un mercado que no para de evolucionar.</p>
+        </div>
+        <div class="aula-card">
+          <div class="aula-number">06</div>
+          <h3>Nuevos Conocimientos — Parte 2</h3>
+          <p>El dominio de múltiples herramientas abre más puertas. 3D, VFX, motion graphics, diseño gráfico — una visión de lo que es posible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROYECTOS PRÁCTICOS ══ -->
+  <section id="proyectos">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Práctica real</span>
+        <h2>2 Proyectos completos</h2>
+        <p>Nada de teoría sin aplicación. Construirás dos proyectos reales paso a paso.</p>
+      </div>
+      <div class="proyectos-grid">
+        <div class="proyecto-card">
+          <div class="proyecto-badge">After Effects</div>
+          <h3>Proyecto VFX</h3>
+          <p>Crea un proyecto de efectos visuales completo usando After Effects. Composición, capas, animación y render profesional.</p>
+          <ul class="proyecto-tecnicas">
+            <li>Composición y capas</li>
+            <li>Creación y uso de máscaras</li>
+            <li>Integración de HUDs y hologramas</li>
+            <li>Técnicas de composición profesional</li>
+          </ul>
+        </div>
+        <div class="proyecto-card">
+          <div class="proyecto-badge">Blender</div>
+          <h3>Realidad Aumentada</h3>
+          <p>Integra elementos 3D en una filmación real. Aprende tracking 3D y crea una escena de realidad aumentada desde cero.</p>
+          <ul class="proyecto-tecnicas">
+            <li>Tracking 3D en Blender y After Effects</li>
+            <li>Integración de elementos 3D en vídeo real</li>
+            <li>Hologramas y efectos de AR</li>
+            <li>Render y exportación final</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ BONUS ══ -->
+  <section id="bonus">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Incluido en el curso</span>
+        <h2>Bonus — Recursos profesionales</h2>
+        <p>Packs de assets listos para usar en tus propios proyectos.</p>
+      </div>
+      <div class="bonus-grid">
+        <div class="bonus-card">
+          <div class="bonus-icon">📺</div>
+          <h4>HUDs Editables</h4>
+          <p>Footages de hologramas listos para usar y versiones totalmente editables en After Effects.</p>
+        </div>
+        <div class="bonus-card">
+          <div class="bonus-icon">⛈️</div>
+          <h4>Pack Tormenta VFX</h4>
+          <p>Chuvas, tempestades, rayos y efectos atmosféricos para tus composiciones.</p>
+        </div>
+        <div class="bonus-card">
+          <div class="bonus-icon">💥</div>
+          <h4>Pack Essentials</h4>
+          <p>Explosiones, disparos, fuego, vidrios rotos y más — todo listo para compositing.</p>
+        </div>
+        <div class="bonus-card">
+          <div class="bonus-icon">🔊</div>
+          <h4>151 Risers Sci-Fi</h4>
+          <p>Efectos de sonido estilo Riser, Sci-Fi y Cyberpunk para dar vida a tus proyectos.</p>
+        </div>
+        <div class="bonus-card">
+          <div class="bonus-icon">🌿</div>
+          <h4>Pack Ambiences</h4>
+          <p>Sonidos de ambiente: naturaleza, animales y efectos urbanos para cualquier escena.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PRECIO ══ -->
+  <section id="precio">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Inversión</span>
+        <h2>Acceso completo</h2>
+      </div>
+      <div class="pricing-box">
+        <div class="pricing-label">Precio único</div>
+        <div class="pricing-amount"><sup>€</sup>12<sup>,97</sup></div>
+        <p class="pricing-desc">Pago único — acceso de por vida</p>
+        <ul class="pricing-list">
+          <li><span class="check">✔</span> 6 lecciones sobre el mercado audiovisual</li>
+          <li><span class="check">✔</span> Proyecto práctico — After Effects</li>
+          <li><span class="check">✔</span> Proyecto práctico — Blender (Realidad Aumentada)</li>
+          <li><span class="check">✔</span> Pack HUDs Editables</li>
+          <li><span class="check">✔</span> Pack Tormenta VFX</li>
+          <li><span class="check">✔</span> Pack Essentials VFX</li>
+          <li><span class="check">✔</span> 151 Risers Sci-Fi / Cyberpunk</li>
+          <li><span class="check">✔</span> Pack Ambiences Sound Effects</li>
+        </ul>
+        <a href="LINK_HOTMART_AQUI" class="btn">Quiero empezar ahora — 12,97€</a>
+        <p class="pricing-guarantee">🔒 Pago seguro a través de Hotmart</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ══ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Preguntas frecuentes</span>
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            ¿Necesito experiencia previa con After Effects o Blender?
+            <span class="arrow">›</span>
+          </button>
+          <div class="faq-answer">No. El curso está diseñado para que puedas empezar desde cero. Se explica todo paso a paso.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            ¿Por cuánto tiempo tengo acceso al curso?
+            <span class="arrow">›</span>
+          </button>
+          <div class="faq-answer">El acceso es de por vida. Pagas una vez y el contenido es tuyo para siempre, incluyendo futuras actualizaciones.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            ¿En qué idioma está el curso?
+            <span class="arrow">›</span>
+          </button>
+          <div class="faq-answer">El curso está en español.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            ¿Qué versiones de After Effects y Blender necesito?
+            <span class="arrow">›</span>
+          </button>
+          <div class="faq-answer">Las versiones recientes de ambos programas funcionan perfectamente. Blender es gratuito y After Effects forma parte de Adobe Creative Cloud.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            ¿Cómo accedo al curso tras la compra?
+            <span class="arrow">›</span>
+          </button>
+          <div class="faq-answer">Inmediatamente después de la compra recibirás un email de Hotmart con tus credenciales de acceso a la plataforma.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER CTA ══ -->
+  <section id="footer-cta">
+    <div class="container">
+      <span class="label">Es el momento</span>
+      <h2>Empieza a crear<br/><em style="color:var(--red)">efectos visuales reales</em></h2>
+      <p>Todo el contenido, los proyectos y los packs de recursos por un único pago de 12,97€.</p>
+      <a href="#precio" class="btn">Acceder al curso ahora</a>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="container">
+      <p>© 2025 El Poder del VFX — Todos los derechos reservados</p>
+      <p style="margin-top:0.5rem;">
+        <a href="#">Política de Privacidad</a> &nbsp;·&nbsp;
+        <a href="#">Términos y Condiciones</a> &nbsp;·&nbsp;
+        <a href="#">Contacto</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
