@@ -18,7 +18,7 @@ export default function Hero() {
       <div className="relative z-10 w-full max-w-4xl mx-auto px-8 py-24 text-center">
 
         <img
-          src="/Image/LOGO.png"
+          src="/image/LOGO.png"
           alt="El Poder del VFX"
           className="mx-auto mb-10"
           style={{ maxHeight: '180px', objectFit: 'contain', filter: 'invert(1) brightness(1.1)' }}
