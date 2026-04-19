@@ -57,7 +57,7 @@ export default function Projects() {
               {/* Badge */}
               <div className="flex items-center justify-between px-5 pt-5 mb-4">
                 <span
-                  className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
+                  className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full whitespace-nowrap"
                   style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', color: '#fff' }}
                 >
                   {p.tag}
