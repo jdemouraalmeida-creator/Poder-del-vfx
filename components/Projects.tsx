@@ -54,9 +54,11 @@ function AutoplayVideo({ src }: { src: string }) {
       ref={ref}
       src={src}
       className="w-full h-full object-cover"
+      autoPlay
       muted
       loop
       playsInline
+      preload="auto"
     />
   )
 }
