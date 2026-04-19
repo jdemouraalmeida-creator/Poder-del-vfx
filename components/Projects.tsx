@@ -19,7 +19,7 @@ const projects = [
     label: 'Blender — Realidad Aumentada',
     title: 'Spot publicitario — Mercadona',
     desc: 'Integra objetos 3D en footage real con Blender. Tracking, iluminación y composición para un spot de realidad aumentada que parece de producción profesional.',
-    video: '/videos/MERCADONAA.mp4',
+    video: '/videos/mercadona-web.mp4',
     color: '#60a5fa',
     borderColor: 'rgba(96,165,250,0.4)',
     bgColor: 'rgba(96,165,250,0.05)',
