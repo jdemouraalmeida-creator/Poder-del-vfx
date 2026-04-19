@@ -55,9 +55,9 @@ export default function Projects() {
               }}
             >
               {/* Badge */}
-              <div className="flex items-center justify-between px-5 pt-5 mb-4">
+              <div className="flex flex-col gap-2 px-5 pt-5 mb-4">
                 <span
-                  className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full whitespace-nowrap"
+                  className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full whitespace-nowrap self-start"
                   style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.25)', color: '#fff' }}
                 >
                   {p.tag}
@@ -66,7 +66,7 @@ export default function Projects() {
               </div>
 
               {/* Video */}
-              <div className="relative mx-auto" style={{ aspectRatio: '9/16', background: '#000', maxWidth: '240px' }}>
+              <div className="relative mx-auto w-full" style={{ aspectRatio: '9/16', background: '#000', maxWidth: '260px' }}>
                 <video
                   src={p.video}
                   className="w-full h-full object-cover"
@@ -74,6 +74,7 @@ export default function Projects() {
                   muted
                   loop
                   playsInline
+                  controls
                 />
               </div>
 
