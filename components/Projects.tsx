@@ -1,3 +1,7 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
+
 const projects = [
   {
     tag: 'BONUS EXCLUSIVO',
@@ -22,6 +26,40 @@ const projects = [
     glowColor: 'rgba(96,165,250,0.1)',
   },
 ]
+
+function AutoplayVideo({ src }: { src: string }) {
+  const ref = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = ref.current
+    if (!video) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {})
+        } else {
+          video.pause()
+        }
+      },
+      { threshold: 0.3 }
+    )
+
+    observer.observe(video)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <video
+      ref={ref}
+      src={src}
+      className="w-full h-full object-cover"
+      muted
+      loop
+      playsInline
+    />
+  )
+}
 
 export default function Projects() {
   return (
@@ -67,15 +105,7 @@ export default function Projects() {
 
               {/* Video */}
               <div className="relative mx-auto w-full" style={{ aspectRatio: '9/16', background: '#000', maxWidth: '260px' }}>
-                <video
-                  src={p.video}
-                  className="w-full h-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  controls
-                />
+                <AutoplayVideo src={p.video} />
               </div>
 
               {/* Info */}
