@@ -1,4 +1,4 @@
-const sharedColor = '#60a5fa'
+﻿const sharedColor = '#60a5fa'
 const sharedBorder = 'rgba(96,165,250,0.4)'
 const sharedBg = 'rgba(96,165,250,0.05)'
 
@@ -8,7 +8,7 @@ const bonuses = [
     title: 'Pack HUDs Editables',
     desc: 'Hologramas y HUDs listos para usar en After Effects — y totalmente editables. Usados en producciones reales de publicidad y motion graphics.',
     value: 'Incluido gratis',
-    image: '/bonus/PACK HUDS.jpg',
+    image: '/bonus/CA.png',
     color: sharedColor,
     borderColor: sharedBorder,
     bgColor: sharedBg,
@@ -18,7 +18,7 @@ const bonuses = [
     title: 'Pack Tormenta VFX',
     desc: 'Lluvia, tormentas, rayos y efectos atmosféricos listos para composición. Ahorra horas de render y añade producción a cualquier escena.',
     value: 'Incluido gratis',
-    image: '/bonus/PACK TORMENTA.jpg',
+    image: '/bonus/CA%202.png',
     color: sharedColor,
     borderColor: sharedBorder,
     bgColor: sharedBg,
@@ -28,7 +28,7 @@ const bonuses = [
     title: 'Pack Essentials VFX',
     desc: 'Explosiones, disparos, fuego, vidrios rotos y mucho más. El pack de efectos que todo VFX artist necesita tener a mano.',
     value: 'Incluido gratis',
-    image: '/bonus/PACK ESSENTIALS.jpg',
+    image: '/bonus/CA%203.png',
     color: sharedColor,
     borderColor: sharedBorder,
     bgColor: sharedBg,
@@ -38,7 +38,7 @@ const bonuses = [
     title: 'Pack Risers',
     desc: 'Efectos de sonido Sci-Fi y Cyberpunk para dar vida sonora a tus VFX. El audio marca la diferencia entre un efecto amateur y uno profesional.',
     value: 'Incluido gratis',
-    image: '/bonus/PACK RISERS.jpg',
+    image: '/bonus/CA%204.png',
     color: sharedColor,
     borderColor: sharedBorder,
     bgColor: sharedBg,
@@ -48,7 +48,7 @@ const bonuses = [
     title: 'Pack Ambiences',
     desc: 'Sonidos de ambiente para cualquier escena — naturaleza, ciudad, interiores. El detalle que hace que tu composición se sienta real.',
     value: 'Incluido gratis',
-    image: '/bonus/PACK AMBIENCE.jpg',
+    image: '/bonus/CA%205.png',
     color: sharedColor,
     borderColor: sharedBorder,
     bgColor: sharedBg,

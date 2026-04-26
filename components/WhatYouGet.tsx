@@ -1,13 +1,12 @@
-const covers = [
-  '/projects/%E2%9C%85%20Capa%20Introducci%C3%ADon-01.png',
-  '/projects/%E2%9C%85%20Capa%20Aula-02.png',
-  '/projects/%25E2%259C%2585_Capa_Aula-03.png',
-  '/projects/%25E2%259C%2585_Capa_Aula-04.png',
-  '/projects/%25E2%259C%2585_Capa_Aula-05.png',
-  '/projects/%25E2%259C%2585_Capa_Aula-06.png',
-  '/projects/%25E2%259C%2585_Capa_Aula-07.png',
-  '/projects/Mis%20errores%2007.png',
-  '/projects/Impuestos%2008.png',
+﻿const covers = [
+  '/projects/Empieza%20aqui.png',
+  '/projects/Nuevos%20conocimientos.png',
+  '/projects/Nuevos%20conocimientos%202.png',
+  '/projects/Networking%20part%201.png',
+  '/projects/Networking%20part%202.png',
+  '/projects/Oportunidades.png',
+  '/projects/Mis%20errores.png',
+  '/projects/Impuestos.png',
 ]
 
 const bonuses = [
