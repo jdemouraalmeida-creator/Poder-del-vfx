@@ -1,6 +1,5 @@
 import Hero from '@/components/Hero'
 import Problem from '@/components/Problem'
-import ForWhom from '@/components/ForWhom'
 import Transformation from '@/components/Transformation'
 import WhatYouGet from '@/components/WhatYouGet'
 import Projects from '@/components/Projects'
@@ -14,7 +13,6 @@ export default function Home() {
     <main>
       <Hero />
       <Problem />
-      <ForWhom />
       <Transformation />
       <WhatYouGet />
       <Projects />

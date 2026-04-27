@@ -45,7 +45,7 @@ export default function WhatYouGet() {
               <div
                 key={i}
                 className="shrink-0 rounded-lg overflow-hidden border"
-                style={{ width: '220px', borderColor: 'rgba(230,48,34,0.15)' }}
+                style={{ width: '220px', borderColor: 'rgba(230,48,34,0.55)' }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
