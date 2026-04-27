@@ -88,7 +88,7 @@ export default function GuaranteeCTA() {
             Todo lo que necesitas saber para navegar el mercado audiovisual — por 10€.
           </p>
           <a
-            href="https://pay.hotmart.com/J105182852H?off=pcom3in6&checkoutMode=10"
+            href="https://pay.hotmart.com/J105182852H?bid=1777318613086"
             className="relative overflow-hidden btn-shine inline-flex items-center gap-3 px-10 py-5 font-black text-xl text-gray-900 transition-all duration-300 hover:scale-105 active:scale-95 rounded-2xl"
             style={{
               background: '#FFFFFF',

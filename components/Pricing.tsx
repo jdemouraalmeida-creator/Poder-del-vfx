@@ -82,7 +82,7 @@ export default function Pricing() {
 
               {/* Main CTA */}
               <a
-                href="https://pay.hotmart.com/J105182852H?off=pcom3in6&checkoutMode=10"
+                href="https://pay.hotmart.com/J105182852H?bid=1777318613086"
                 className="relative overflow-hidden btn-shine block w-full text-center px-8 py-5 font-black text-xl text-gray-900 transition-all duration-300 hover:scale-105 active:scale-95 mb-4 rounded-2xl"
                 style={{
                   background: '#FFFFFF',
