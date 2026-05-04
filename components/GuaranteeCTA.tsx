@@ -95,7 +95,7 @@ export default function GuaranteeCTA() {
               boxShadow: '0 4px 30px rgba(255,255,255,0.15)',
             }}
           >
-            Empezar ahora — 10€ →
+            Empezar ahora →
           </a>
           <p className="text-gray-600 text-sm mt-4">Pago seguro via Hotmart · Acceso inmediato · Garantía 15 días</p>
         </div>

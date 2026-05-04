@@ -89,7 +89,7 @@ export default function Pricing() {
                   boxShadow: '0 0 40px rgba(230,48,34,0.5), 0 0 80px rgba(230,48,34,0.18)',
                 }}
               >
-                Empezar ahora — 10€ →
+                Empezar ahora →
               </a>
 
               <p className="text-gray-600 text-xs text-center">

@@ -80,7 +80,7 @@ export default function Hero() {
               boxShadow: '0 4px 30px rgba(255,255,255,0.15)',
             }}
           >
-            Empezar ahora — 10€ →
+            Empezar ahora →
           </a>
 
           <div className="flex items-center gap-2 text-gray-600 text-sm">

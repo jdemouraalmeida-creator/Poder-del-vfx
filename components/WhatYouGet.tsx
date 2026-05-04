@@ -101,7 +101,7 @@ export default function WhatYouGet() {
                   boxShadow: '0 4px 30px rgba(255,255,255,0.15)',
                 }}
               >
-                Empezar ahora — 10€ →
+                Empezar ahora →
               </a>
               <p className="text-gray-600 text-xs text-center">
                 Pago seguro via Hotmart · Garantía 15 días sin preguntas
