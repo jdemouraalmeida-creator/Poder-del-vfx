@@ -1,3 +1,5 @@
+import BuyButton from './BuyButton'
+
 const included = [
   '6 lecciones sobre el mercado audiovisual',
   'Proyecto práctico completo — After Effects',
@@ -81,16 +83,14 @@ export default function Pricing() {
               <p className="text-gray-600 text-xs mb-6">Más IVA</p>
 
               {/* Main CTA */}
-              <a
-                href="https://pay.hotmart.com/J105182852H?bid=1777318613086"
+              <BuyButton
+                label="Empezar ahora →"
                 className="relative overflow-hidden btn-shine block w-full text-center px-8 py-5 font-black text-xl text-gray-900 transition-all duration-300 hover:scale-105 active:scale-95 mb-4 rounded-2xl"
                 style={{
                   background: '#FFFFFF',
                   boxShadow: '0 0 40px rgba(230,48,34,0.5), 0 0 80px rgba(230,48,34,0.18)',
                 }}
-              >
-                Empezar ahora →
-              </a>
+              />
 
               <p className="text-gray-600 text-xs text-center">
                 Pago 100% seguro via Hotmart · Acceso inmediato · Garantía 15 días

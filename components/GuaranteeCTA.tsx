@@ -1,3 +1,5 @@
+import BuyButton from './BuyButton'
+
 const faqs = [
   {
     q: '¿Es un curso técnico de After Effects o Blender?',
@@ -87,16 +89,14 @@ export default function GuaranteeCTA() {
           <p className="text-gray-400 text-base mb-8 leading-relaxed">
             Todo lo que necesitas saber para navegar el mercado audiovisual — por 10€.
           </p>
-          <a
-            href="https://pay.hotmart.com/J105182852H?bid=1777318613086"
+          <BuyButton
+            label="Empezar ahora →"
             className="relative overflow-hidden btn-shine inline-flex items-center gap-3 px-10 py-5 font-black text-xl text-gray-900 transition-all duration-300 hover:scale-105 active:scale-95 rounded-2xl"
             style={{
               background: '#FFFFFF',
               boxShadow: '0 4px 30px rgba(255,255,255,0.15)',
             }}
-          >
-            Empezar ahora →
-          </a>
+          />
           <p className="text-gray-600 text-sm mt-4">Pago seguro via Hotmart · Acceso inmediato · Garantía 15 días</p>
         </div>
       </section>

@@ -1,3 +1,5 @@
+import BuyButton from './BuyButton'
+
 export default function FinalCTA() {
   return (
     <>
@@ -33,16 +35,14 @@ export default function FinalCTA() {
           </p>
 
           <div className="flex flex-col items-center gap-4">
-            <a
-              href="https://pay.hotmart.com/J105182852H?bid=1777318613086"
+            <BuyButton
+              label="Acceder al curso ahora →"
               className="relative overflow-hidden btn-shine inline-flex items-center gap-3 px-10 py-5 font-black text-xl text-gray-900 transition-all duration-300 hover:scale-105 active:scale-95 rounded-2xl"
               style={{
                 background: '#FFFFFF',
                 boxShadow: '0 0 40px rgba(230,48,34,0.55), 0 0 80px rgba(230,48,34,0.2)',
               }}
-            >
-              Acceder al curso ahora →
-            </a>
+            />
             <p className="text-gray-600 text-sm">
               Pago seguro via Hotmart · Acceso inmediato · Garantía 15 días sin preguntas
             </p>
